@@ -31,7 +31,7 @@ var users = ['stan', 'dom', 'xz']
 alert('1) users[1]: ' + users[1]);
 
 //========================
-//5) javascript object 
+//5) javascript object (JSON)
 //========================
 var aGame = {
 	'title': 'huat ah',
@@ -45,7 +45,8 @@ var players = [
 	{
 		'name': 'Messi',
 		'age': '28',
-		'position': 'RW'
+		'position': 'RW',
+		'goals': '300'
 	},
 	{
 		'name': 'Neymar',
@@ -54,10 +55,17 @@ var players = [
 	}
 ]
 
-var player = players[0];
+for (var i = 0; i<players.length; i++) {
+	var player = players[i];
+
+	alert((i+1) + ') player.name: ' + player.name);
+	alert((i+1) + ') player.position: ' + player.position);
+	alert((i+1) + ') player.position: ' + player.goals);
+}
 
 alert('2.5) player.name: ' + player.name);
 alert('2.5) player.position: ' + player.position);
+alert('2.5) player.position: ' + player.goals);
 
 //========================
 //5.5) fun fact
@@ -150,8 +158,12 @@ function goodTest(first, second, third) {
 		alert('there is 1 param: ' + first);
 	}
 
-	if (second) {
-		alert('there is 2: ' + second);
+	if (second === undefined) {
+		alert('are you sure u didn forget to provide 2nd param?');
+	} else {
+		if (second) {
+			alert('there is 2: ' + second);
+		}	
 	}
 
 	if (third) {
@@ -160,9 +172,10 @@ function goodTest(first, second, third) {
 }
 
 goodTest('huat');
+goodTest('huat', 'pika');
+goodTest(null, 'raichu');
 goodTest('huat', null);
 goodTest('huat', undefined);
-goodTest('huat', 'pika');
 goodTest('huat', 'yahoo', 'google');
 
 // ==============================================
