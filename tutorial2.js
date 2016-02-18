@@ -30,34 +30,6 @@ var isHot = true;
 var users = ['stan', 'dom', 'xz']
 alert('1) users[1]: ' + users[1]);
 
-//arrays can contain objects, means its not subjected to String, Number, etc.
-//you can put arrays inside arrays, or even javascript objects
-
-var arr1 = [
-	[
-		{
-			'title': 'nice title1',
-			'duration': '500'
-		},
-		{
-			'title': 'nice title numba 2',
-			'duration': '450'
-		}
-	],
-	[
-		{
-			'title': 'nice title 3',
-			'duration': '500'
-		},
-		{
-			'title': 'nice title numba 4',
-			'duration': '450'
-		}
-	]
-];
-
-alert('1.5) arr1[0][1].title: ' + arr1[1][0].title);
-
 //========================
 //5) javascript object 
 //========================
@@ -86,6 +58,39 @@ var player = players[0];
 
 alert('2.5) player.name: ' + player.name);
 alert('2.5) player.position: ' + player.position);
+
+//========================
+//5.5) fun fact
+//========================
+//arrays can contain objects, means its not subjected to String, Number, etc.
+//you can put arrays inside arrays, or even javascript objects
+//the other way round also works, i.e. putting arrays inside a json object
+
+var arr1 = [
+	[
+		{
+			'title': 'nice title1',
+			'duration': '500'
+		},
+		{
+			'title': 'nice title numba 2',
+			'duration': '450'
+		}
+	],
+	[
+		{
+			'title': 'nice title 3',
+			'duration': '500'
+		},
+		{
+			'title': 'nice title numba 4',
+			'duration': '450'
+		}
+	]
+];
+
+alert('3.5) arr1[0][1].title: ' + arr1[1][0].title);
+
 
 //========================================================================
 //6) null

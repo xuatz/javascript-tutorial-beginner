@@ -13,6 +13,23 @@ if (isSomeCondition) {
 	alert('true!');
 }
 
+var activityCodeNo = 'asdasd'; // 'a', 'b', 'c'
+
+switch(activityCodeNo) {
+case 'a':
+	alert('case 1');
+	break;
+case 'b':
+	alert('case 2');
+	break;
+case 'c':
+	alert('case 3');
+	break;
+default:
+	alert('default');
+	break;
+}
+
 /*
 TODO comparision tutorial
  */
@@ -28,16 +45,16 @@ Loops
 
 //1) for
 for (i = 0; i < 3; i++) {
-    alert(i);
+	alert(i);
 }
 //2) while
 
 var count = 0;
 while (count < 3) {
 	alert('count: ' + count);
-    count++;
-    --count;
-    count += 1;
+	count++;
+	--count;
+	count += 1;
 }
 
 //Function declaration
@@ -70,45 +87,45 @@ So in this case, we could declare anonymous functions directly as the argument, 
  */
 
 _.each(game.draft, function(player, index) {
-    // logger.debug('index: ' + index);
-    // logger.debug('player');
-    // logger.debug(player);
-    
-    if (!player.team) {
+	// logger.debug('index: ' + index);
+	// logger.debug('player');
+	// logger.debug(player);
+	
+	if (!player.team) {
 
-    } else {
-        var playerSlot = 0;
+	} else {
+		var playerSlot = 0;
 
-        logger.debug(player);
-        logger.debug('player');
+		logger.debug(player);
+		logger.debug('player');
 
-        switch(player.team) {
-            case 'R':
-                playerSlot = radCount;
-                radCount++;
-                break;
-            case 'D':
-                playerSlot = direCount + 5;
-                direCount++;
-                break;
-        }
+		switch(player.team) {
+			case 'R':
+				playerSlot = radCount;
+				radCount++;
+				break;
+			case 'D':
+				playerSlot = direCount + 5;
+				direCount++;
+				break;
+		}
 
-        logger.debug('playerSlot:after: ' + playerSlot);
+		logger.debug('playerSlot:after: ' + playerSlot);
 
-        var user = Meteor.users.findOne({ username: player.name });
+		var user = Meteor.users.findOne({ username: player.name });
 
-        //TODO pending playerSlot information, either 0-9 or rad/dire 0-4
-        var mpr = {
-            'username': player.name,
-            'playerSlot': playerSlot,
-            'minScore': user.profile.privateData.playerStats.minScore,
-            'maxScore': user.profile.privateData.playerStats.maxScore,
-            'score': user.profile.privateData.playerStats.score
-        };
+		//TODO pending playerSlot information, either 0-9 or rad/dire 0-4
+		var mpr = {
+			'username': player.name,
+			'playerSlot': playerSlot,
+			'minScore': user.profile.privateData.playerStats.minScore,
+			'maxScore': user.profile.privateData.playerStats.maxScore,
+			'score': user.profile.privateData.playerStats.score
+		};
 
-        matchPlayerResults.push(mpr);
-        usernames.push(mpr.username);
-    }
+		matchPlayerResults.push(mpr);
+		usernames.push(mpr.username);
+	}
 });
 
 /*
@@ -139,6 +156,6 @@ var users = [
 
 //on a side note, the code above will give the exact same result as the code below
 for (i = 0; i < users.length; i++) {
-    awesomeMethod(users[i]);
-    awesomeMethod2(users[i]);
+	awesomeMethod(users[i]);
+	awesomeMethod2(users[i]);
 }
