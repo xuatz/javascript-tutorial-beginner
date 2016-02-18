@@ -8,6 +8,7 @@ i = 0;
 var u = 5;
 alert("fun example 7 :" + i+++u);
 
+alert("fun example 8 :" + i+ ++u);
 
 /*
 
