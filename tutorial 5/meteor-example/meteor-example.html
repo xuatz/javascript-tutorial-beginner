@@ -1,0 +1,25 @@
+<head>
+	<title>meteor-example</title>
+</head>
+
+<body>
+	<h1>Welcome to Meteor!</h1>
+	{{> hello}}
+
+	{{> ComponentTwo}}
+</body>
+
+<template name="hello">
+	<button>Click Me</button>
+	<p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="ComponentTwo">
+	<input type="text" id="inputtext" placeholder="Random Text here!">
+	<button>
+		Update!
+	</button>
+	<p>
+		{{textValue}}
+	</p>
+</template>
